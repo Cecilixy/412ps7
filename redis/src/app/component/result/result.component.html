@@ -1,0 +1,23 @@
+<div *ngIf="!!data?.length; else noDataTpl">
+  <div>是否从缓存获取到的数据：{{isRedis ? '是' : '否'}}</div>
+  <div>结果为：</div>
+  <ul>
+    <li *ngFor="let item of data">
+      <p>region: {{item.region}}</p>
+      <p>localtime: {{item?.localtime}}</p>
+      <p>{{item?.text}}：<img [src]="item?.icon" alt=""></p>
+      <p>cloud: {{item?.cloud}}</p>
+      <p>temp_c：{{item?.temp_c}}</p>
+      <p>temp_f：{{item?.temp_f}}</p>
+      <p>vis_km：{{item?.vis_km}}</p>
+      <p>vis_km：{{item?.vis_km}}</p>
+      <p>vis_miles：{{item?.vis_miles}}</p>
+      <p>wind_degree：{{item?.wind_degree}}</p>
+      <p>wind_dir：{{item?.wind_dir}}</p>
+      <p>wind_kph：{{item?.wind_kph}}</p>
+      <p>wind_mph：{{item?.wind_mph}}</p>
+    </li>
+  </ul>
+</div>
+
+<ng-template #noDataTpl>noData</ng-template>
